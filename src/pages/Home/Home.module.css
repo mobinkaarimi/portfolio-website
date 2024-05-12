@@ -1,0 +1,10 @@
+.heroRight {
+  background-image: url("../../assets/Images/Hero-Right.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
