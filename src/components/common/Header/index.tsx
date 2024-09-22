@@ -1,26 +1,26 @@
 import HeaderItemType from "./types";
-import styles from "./Header.module.css";
+import logo from "@assets/icons/logo.svg";
 export default function Header() {
   const headerData: HeaderItemType[] = [
     {
       id: 0,
       name: "HOME",
-      link: "./",
+      link: "#",
     },
     {
       id: 1,
-      name: "ABOUT",
-      link: "./",
+      name: "SKILLS",
+      link: "#skills",
     },
     {
       id: 2,
       name: "EXPERIENCE",
-      link: "./",
+      link: "#experience",
     },
     {
       id: 3,
-      name: "CONTACT ME",
-      link: "./",
+      name: "TALK TO ME",
+      link: "#contact-me",
     },
   ];
 
@@ -28,16 +28,23 @@ export default function Header() {
     return (
       <a
         key={item.id}
-        className="text-[32px] text-palette-primary-yellow font-bold font-palette-bold"
+        href={item.link}
+        className="text-sm lg:text-[18px] text-palette-primary-yellow font-medium font-palette-bold"
       >
-        {item.name}
+        {item.name == "HOME" ? (
+          <img className="w-auto h-6 object-cover" src={logo} />
+        ) : (
+          item.name
+        )}
       </a>
     );
   }
 
   return (
-    <nav className="flex flex-row lg:space-x-20 p-10 z-10">
-      {headerData.map(headerItemMapper)}
-    </nav>
+    <head className="flex flex-row justify-center md:justify-start py-5  bg-palette-primary-gray z-30  border-b border-b-palette-primary-yellow sticky top-0">
+      <nav className="flex flex-row  space-x-4 lg:space-x-10 justify-start items-center  relative px-10">
+        {headerData.map(headerItemMapper)}
+      </nav>
+    </head>
   );
 }

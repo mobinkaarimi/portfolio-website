@@ -1,0 +1,14 @@
+#experience p {
+    position: relative;
+    left: 15px;
+}
+#experience p:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    @apply rounded-full;
+    @apply bg-palette-primary-yellow
+}
